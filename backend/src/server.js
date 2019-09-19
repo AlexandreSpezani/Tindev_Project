@@ -1,13 +1,15 @@
 const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
 const routes = require("./routes");
 const server = express();
-// const mongoose = require("mongoose");
 
-// mongoose.connect(
-//   "mongodb+srv://spezani:spezani@cluster0-lemfe.mongodb.net/test?retryWrites=true&w=majority",
-//   { useNewUrlParser: true }
-// );
+mongoose.connect(
+  "mongodb+srv://spezani:Mortadela123456@cluster0-lemfe.mongodb.net/TindevBD?retryWrites=true&w=majority",
+  { useNewUrlParser: true, useUnifiedTopology: true }
+);
 
+server.use(cors());
 server.use(express.json());
 server.use(routes);
 
